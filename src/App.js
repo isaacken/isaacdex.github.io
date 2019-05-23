@@ -7,7 +7,11 @@ export default class App extends Component {
     return (
       <div className="pokedex">
         <div className='pokemon-list'>
-          <PokemonItem></PokemonItem>
+          <PokemonItem 
+            pokemon_name='Bulbasaur'
+            pokedex_number='1'
+            type_1='grass'
+            type_2='poison' />
         </div>
       </div>
     );
