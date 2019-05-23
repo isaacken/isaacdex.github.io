@@ -1,0 +1,71 @@
+.bug-title {
+    background-color: rgba(171, 200, 55, 1);
+}
+
+.dark-title {
+    background-color: rgba(51, 51, 51, 1);
+}
+
+.dragon-title {
+    background-color: rgba(147, 147, 172, 1);
+}
+
+.electric-title {
+    background-color: rgba(255, 230, 128, 1);
+}
+
+.fairy-title {
+    background-color: rgba(255, 170, 238, 1);
+}
+
+.fighting-title {
+    background-color: rgba(255, 102, 0, 1);
+}
+
+.fire-title {
+    background-color: rgba(160, 44, 44, 1);
+}
+
+.flying-title {
+    background-color: rgba(183, 200, 183, 1);
+}
+
+.ghost-title {
+    background-color: rgba(124, 111, 145, 1);
+}
+
+.grass-title {
+    background-color: rgba(90, 160, 44, 1);
+}
+
+.ground-title {
+    background-color: rgba(255, 179, 128, 1);
+}
+
+.ice-title {
+    background-color: rgba(135, 222, 205, 1);
+}
+
+.normal-title {
+    background-color: rgba(204, 204, 204, 1);
+}
+
+.poison-title {
+    background-color: rgba(138, 111, 145, 1);
+}
+
+.psychic-title {
+    background-color: rgba(200, 55, 171, 1);
+}
+
+.rock-title {
+    background-color: rgba(200, 113, 55, 1);
+}
+
+.steel-title {
+    background-color: rgba(153, 153, 153, 1);
+}
+
+.water-title {
+    background-color: rgba(0, 68, 170);
+}
