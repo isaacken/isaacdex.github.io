@@ -67,6 +67,13 @@ export default class App extends Component {
           <div className='header'>
             <h1><img src={image_folder + '/logo.svg'} /></h1>
           </div>
+          <div className='pagination'>
+            <img className='nav-btn' onClick={this.prevPage} src={image_folder+'/arrow_lft.svg'}/>
+            <div className='page-range'>
+              {(this.state.page - 1) * 12 + 1} - {(this.state.page - 1) * 12 + 12}
+            </div>
+            <img className='nav-btn' onClick={this.nextPage} src={image_folder+'/arrow_rgt.svg'}/>
+          </div>
           <div className='pokemon-list'>
             {
               this.state.pokemon.map((e,k) => {
