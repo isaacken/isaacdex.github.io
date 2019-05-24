@@ -96,6 +96,13 @@ img {
   margin: 25px;
 }
 
+.nav-btn-loading {
+  height: 80px;
+  cursor: wait;
+  margin: 10px;
+  transition: .3s;
+}
+
 .nav-btn {
   height: 80px;
   cursor: pointer;
@@ -118,4 +125,9 @@ img {
   padding: 10px 20px;
   background-color: rgba(0,0,0,.1);
   border-radius: 20px;
+  cursor: default;
+}
+
+.loading-gif {
+  height: 30vh;
 }

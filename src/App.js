@@ -39,11 +39,15 @@ export default class App extends Component {
             name: response.data.name,
             number: this.pad(response.data.id,3),
             types: response.data.types
-          });
-          this.setState({loaded: this.state.loaded})
+          });          
         });
       });
-      this.setState({pokemon: pokemonList, loaded: true});
+      setTimeout(() => {
+        do {
+          if (pokemonList.length >= 12)
+            this.setState({pokemon: pokemonList, loaded: true});
+        } while (pokemonList.length < 12);
+      },2000);
     });
   }
 
@@ -106,8 +110,28 @@ export default class App extends Component {
         </div>
       );
     } else {
+      let loading_img = parseInt(Math.random()*4) + 1;
       return (
-        <div>Loading...</div>
+        <div className='pokedex'>
+          <div className='header'>
+            <h1><img src={image_folder + '/logo.svg'} /></h1>
+          </div>
+          <div className='pagination'>
+            <img className='nav-btn-loading' src={image_folder+'/arrow_lft.svg'}/>
+            <div className='page-range'>
+              {(this.state.page - 1) * 12 + 1} - {(this.state.page - 1) * 12 + 12}
+            </div>
+            <img className='nav-btn-loading' src={image_folder+'/arrow_rgt.svg'}/>
+          </div>
+          <img className='loading-gif' src={image_folder+'/loading_'+loading_img+'.gif'} />
+          <div className='pagination'>
+            <img className='nav-btn-loading' src={image_folder+'/arrow_lft.svg'}/>
+            <div className='page-range'>
+              {(this.state.page - 1) * 12 + 1} - {(this.state.page - 1) * 12 + 12}
+            </div>
+            <img className='nav-btn-loading' src={image_folder+'/arrow_rgt.svg'}/>
+          </div>
+        </div>
       );
     } 
   }
