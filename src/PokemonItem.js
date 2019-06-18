@@ -3,7 +3,7 @@ import './assets/css/App.css';
 import './assets/css/Types.css';
 import ReactTooltip from 'react-tooltip';
 
-var image_folder = process.env.PUBLIC_URL + '/assets/img';
+const image_folder = process.env.PUBLIC_URL + '/assets/img';
 
 export default class PokemonItem extends Component {
   renderType2 = () => {

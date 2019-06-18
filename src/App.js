@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 import PokemonItem from './PokemonItem';
+import Paginator from './Paginator';
 import axios from 'axios';
 import './assets/css/App.css';
-import { type } from 'os';
 
-var image_folder = process.env.PUBLIC_URL + '/assets/img';
+const image_folder = process.env.PUBLIC_URL + '/assets/img';
 
 export default class App extends Component {
   constructor(props) {
@@ -14,6 +14,19 @@ export default class App extends Component {
       pokemon: [],
       loaded: false
     }  
+  }
+
+  openModal = () => {
+    this.setState({modalIsOpen: true});
+  }
+
+  afterOpenModal = () => {
+    // references are now sync'd and can be accessed.
+    this.subtitle.style.color = '#f00';
+  }
+
+  closeModal = () => {
+    this.setState({modalIsOpen: false});
   }
 
   pad = (num, size) => {
@@ -39,7 +52,7 @@ export default class App extends Component {
             name: response.data.name,
             number: this.pad(response.data.id,3),
             types: response.data.types
-          });          
+          }); 
         });
       });
       setTimeout(() => {
@@ -116,21 +129,9 @@ export default class App extends Component {
           <div className='header'>
             <h1><img src={image_folder + '/logo.svg'} /></h1>
           </div>
-          <div className='pagination'>
-            <img className='nav-btn-loading' src={image_folder+'/arrow_lft.svg'}/>
-            <div className='page-range'>
-              {(this.state.page - 1) * 12 + 1} - {(this.state.page - 1) * 12 + 12}
-            </div>
-            <img className='nav-btn-loading' src={image_folder+'/arrow_rgt.svg'}/>
-          </div>
+          <Paginator page_init={(this.state.page - 1) * 12 + 1} page_last={(this.state.page - 1) * 12 + 12} />
           <img className='loading-gif' src={image_folder+'/loading_'+loading_img+'.gif'} />
-          <div className='pagination'>
-            <img className='nav-btn-loading' src={image_folder+'/arrow_lft.svg'}/>
-            <div className='page-range'>
-              {(this.state.page - 1) * 12 + 1} - {(this.state.page - 1) * 12 + 12}
-            </div>
-            <img className='nav-btn-loading' src={image_folder+'/arrow_rgt.svg'}/>
-          </div>
+          <Paginator page_init={(this.state.page - 1) * 12 + 1} page_last={(this.state.page - 1) * 12 + 12} />
         </div>
       );
     } 
